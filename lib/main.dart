@@ -1,6 +1,7 @@
 import 'package:auth_ui/theme/custom_theme.dart';
 import 'package:flutter/material.dart';
 
+import 'router.dart';
 import 'screen/auth/login/login_screen.dart';
 
 void main() {
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: CustomTheme.theme,
       home: const LoginScreen(),
+      onGenerateRoute: AppRouter.generateRoute,
     );
   }
 }

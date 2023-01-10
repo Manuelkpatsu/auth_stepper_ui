@@ -4,30 +4,32 @@ import 'package:auth_ui/screen/widget/text_input_field.dart';
 import 'package:auth_ui/theme/custom_color.dart';
 import 'package:flutter/material.dart';
 
-import 'widget/create_new_account.dart';
-import 'widget/forgot_password_button.dart';
-import 'widget/login_button.dart';
-import 'widget/login_text.dart';
+import 'widget/already_have_account.dart';
+import 'widget/create_account_text.dart';
+import 'widget/register_button.dart';
 
-class LoginScreen extends StatefulWidget {
-  static const routeName = '/login';
+class RegisterScreen extends StatefulWidget {
+  static const routeName = '/register';
 
-  const LoginScreen({Key? key}) : super(key: key);
+  const RegisterScreen({Key? key}) : super(key: key);
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<RegisterScreen> createState() => _RegisterScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
-  final GlobalKey<FormState> _loginFormKey = GlobalKey<FormState>();
+class _RegisterScreenState extends State<RegisterScreen> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _confirmPasswordController = TextEditingController();
+  final _registerFormKey = GlobalKey<FormState>();
   bool _obscurePasswordText = true;
+  bool _obscureConfirmPasswordText = true;
 
   @override
   void dispose() {
     _emailController.dispose();
     _passwordController.dispose();
+    _confirmPasswordController.dispose();
     super.dispose();
   }
 
@@ -39,13 +41,12 @@ class _LoginScreenState extends State<LoginScreen> {
         child: SingleChildScrollView(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Form(
-            key: _loginFormKey,
-            autovalidateMode: AutovalidateMode.onUserInteraction,
+            key: _registerFormKey,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const SizedBox(height: 100),
-                const LoginText(),
+                const CreateAccountText(),
                 const SizedBox(height: 80),
                 const Align(
                   alignment: Alignment.centerLeft,
@@ -66,21 +67,33 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SizedBox(height: 6),
                 PasswordInputField(
                   controller: _passwordController,
-                  inputAction: TextInputAction.done,
+                  inputAction: TextInputAction.next,
                   obscureText: _obscurePasswordText,
                   hintText: 'Enter Your Password',
                   toggle: () =>
                       setState(() => _obscurePasswordText = !_obscurePasswordText),
                 ),
-                const SizedBox(height: 10),
-                ForgotPasswordButton(onTap: () {}),
+                const SizedBox(height: 20),
+                const Align(
+                  alignment: Alignment.centerLeft,
+                  child: LabelText(label: 'Confirm Password'),
+                ),
+                const SizedBox(height: 6),
+                PasswordInputField(
+                  controller: _confirmPasswordController,
+                  inputAction: TextInputAction.done,
+                  obscureText: _obscureConfirmPasswordText,
+                  hintText: 'Confirm Your Password',
+                  toggle: () =>
+                      setState(() => _obscureConfirmPasswordText = !_obscureConfirmPasswordText),
+                ),
                 const SizedBox(height: 50),
-                LoginButton(
+                RegisterButton(
                   isLoading: false,
                   onPressed: () {},
                 ),
                 const SizedBox(height: 25),
-                CreateNewAccount(onTap: () {}),
+                AlreadyHaveAccount(onTap: () {}),
                 const SizedBox(height: 10),
               ],
             ),
