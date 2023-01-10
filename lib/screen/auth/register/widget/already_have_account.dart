@@ -23,7 +23,11 @@ class AlreadyHaveAccount extends StatelessWidget {
               onTap: onTap,
               child: const Text(
                 'Login',
-                style: TextStyle(color: CustomColor.btnColor),
+                style: TextStyle(
+                  color: CustomColor.btnColor,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                ),
               ),
             ),
           ),

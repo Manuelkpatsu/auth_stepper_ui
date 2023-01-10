@@ -23,7 +23,11 @@ class CreateNewAccount extends StatelessWidget {
               onTap: onTap,
               child: const Text(
                 'Sign up',
-                style: TextStyle(color: CustomColor.btnColor),
+                style: TextStyle(
+                  color: CustomColor.btnColor,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                ),
               ),
             ),
           ),
