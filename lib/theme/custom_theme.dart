@@ -16,12 +16,12 @@ class CustomTheme {
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          backgroundColor: CustomColor.primaryColor,
+          backgroundColor: CustomColor.btnColor,
           elevation: 0,
           foregroundColor: Colors.white,
-          textStyle: const TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
+          textStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
           shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(8)),
+            borderRadius: BorderRadius.all(Radius.circular(2)),
           ),
           minimumSize: const Size(double.infinity, 50),
         ),

@@ -8,4 +8,6 @@ class CustomColor {
   static const Color borderColor = Color(0xff3a4053);
   static const Color greyColor = Color(0xffc3c5cf);
   static const Color yellowColor = Color(0xffcea351);
+  static const Color redColor = Color(0xffeb5757);
+  static const Color fillColor = Color(0xff272e43);
 }
