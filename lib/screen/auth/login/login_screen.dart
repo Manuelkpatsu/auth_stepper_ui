@@ -1,3 +1,5 @@
+import 'package:auth_ui/screen/auth/forgot_password/forgot_password_screen.dart';
+import 'package:auth_ui/screen/auth/register/register_screen.dart';
 import 'package:auth_ui/screen/widget/label_text.dart';
 import 'package:auth_ui/screen/widget/password_input_field.dart';
 import 'package:auth_ui/screen/widget/text_input_field.dart';
@@ -73,14 +75,22 @@ class _LoginScreenState extends State<LoginScreen> {
                       setState(() => _obscurePasswordText = !_obscurePasswordText),
                 ),
                 const SizedBox(height: 10),
-                ForgotPasswordButton(onTap: () {}),
+                ForgotPasswordButton(
+                  onTap: () => Navigator.of(context).pushNamed(
+                    ForgotPasswordScreen.routeName,
+                  ),
+                ),
                 const SizedBox(height: 50),
                 LoginButton(
                   isLoading: false,
                   onPressed: () {},
                 ),
                 const SizedBox(height: 25),
-                CreateNewAccount(onTap: () {}),
+                CreateNewAccount(
+                  onTap: () => Navigator.of(context).pushNamed(
+                    RegisterScreen.routeName,
+                  ),
+                ),
                 const SizedBox(height: 10),
               ],
             ),

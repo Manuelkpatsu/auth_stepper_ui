@@ -1,3 +1,4 @@
+import 'package:auth_ui/screen/auth/login/login_screen.dart';
 import 'package:auth_ui/screen/widget/label_text.dart';
 import 'package:auth_ui/screen/widget/password_input_field.dart';
 import 'package:auth_ui/screen/widget/text_input_field.dart';
@@ -84,8 +85,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   inputAction: TextInputAction.done,
                   obscureText: _obscureConfirmPasswordText,
                   hintText: 'Confirm Your Password',
-                  toggle: () =>
-                      setState(() => _obscureConfirmPasswordText = !_obscureConfirmPasswordText),
+                  toggle: () => setState(
+                      () => _obscureConfirmPasswordText = !_obscureConfirmPasswordText),
                 ),
                 const SizedBox(height: 50),
                 RegisterButton(
@@ -93,7 +94,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   onPressed: () {},
                 ),
                 const SizedBox(height: 25),
-                AlreadyHaveAccount(onTap: () {}),
+                AlreadyHaveAccount(
+                  onTap: () => Navigator.of(context).pushNamed(LoginScreen.routeName),
+                ),
                 const SizedBox(height: 10),
               ],
             ),
