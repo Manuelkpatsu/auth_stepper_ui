@@ -11,6 +11,13 @@ dependencies:
     sdk: flutter
   pin_code_fields: ^7.4.0
   intl: ^0.18.0
+  country_picker: ^2.0.19
+  cached_network_image: ^3.2.3
+  image_picker: ^0.8.6
+  dotted_border: ^2.0.0+3
+  flutter_pdfview: ^1.2.5
+  file_picker: ^5.2.5
+
   cupertino_icons: ^1.0.2
 
 dev_dependencies:
@@ -21,10 +28,8 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
-  # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

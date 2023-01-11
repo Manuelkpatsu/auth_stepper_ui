@@ -42,7 +42,7 @@ class Validator {
       return 'Phone number is required';
     }
 
-    String pattern = r'(^(?:[+])?[0-9]{11,12}$)';
+    String pattern = r'(^(?:[+])?[0-9]{10,12}$)';
     RegExp regExp = RegExp(pattern);
     if (!regExp.hasMatch(phoneNumber)) {
       return 'Phone number is invalid.';

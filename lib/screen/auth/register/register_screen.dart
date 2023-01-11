@@ -5,6 +5,8 @@ import 'package:auth_ui/screen/widget/text_input_field.dart';
 import 'package:auth_ui/utils/validator.dart';
 import 'package:flutter/material.dart';
 
+import 'profile_set_up/profile_set_up_argument.dart';
+import 'profile_set_up/profile_set_up_screen.dart';
 import 'widget/already_have_account.dart';
 import 'widget/create_account_text.dart';
 import 'widget/register_button.dart';
@@ -104,7 +106,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 const SizedBox(height: 50),
                 RegisterButton(
                   isLoading: false,
-                  onPressed: () {},
+                  onPressed: () {
+                    if (_registerFormKey.currentState!.validate()) {
+                      Navigator.of(context).pushNamed(
+                        ProfileSetUpScreen.routeName,
+                        arguments: ProfileSetupArgument(
+                          email: _emailController.text.trim(),
+                          password: _passwordController.text.trim(),
+                        ),
+                      );
+                    }
+                  },
                 ),
                 const SizedBox(height: 25),
                 AlreadyHaveAccount(
