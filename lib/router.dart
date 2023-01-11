@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'screen/auth/forgot_password/forgot_password_screen.dart';
 import 'screen/auth/login/login_screen.dart';
 import 'screen/auth/register/register_screen.dart';
+import 'screen/auth/reset_password/reset_password_screen.dart';
 import 'screen/auth/verify_otp/verify_otp_argument.dart';
 import 'screen/auth/verify_otp/verify_otp_screen.dart';
 
@@ -19,6 +20,9 @@ class AppRouter {
       case VerifyOTPScreen.routeName:
         VerifyOTPArgument argument = settings.arguments as VerifyOTPArgument;
         return MaterialPageRoute(builder: (_) => VerifyOTPScreen(argument: argument));
+      case ResetPasswordScreen.routeName:
+        String argument = settings.arguments as String;
+        return MaterialPageRoute(builder: (_) => ResetPasswordScreen(email: argument));
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

@@ -6,7 +6,7 @@ import 'custom_color.dart';
 class CustomTheme {
   static ThemeData get theme {
     return ThemeData(
-      scaffoldBackgroundColor: CustomColor.scaffoldColor,
+      scaffoldBackgroundColor: CustomColor.primaryColor,
       primaryColor: CustomColor.primaryColor,
       canvasColor: Colors.transparent,
       appBarTheme: const AppBarTheme(

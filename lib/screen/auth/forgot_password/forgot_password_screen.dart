@@ -2,7 +2,6 @@ import 'package:auth_ui/screen/auth/verify_otp/verify_otp_argument.dart';
 import 'package:auth_ui/screen/auth/verify_otp/verify_otp_screen.dart';
 import 'package:auth_ui/screen/widget/label_text.dart';
 import 'package:auth_ui/screen/widget/text_input_field.dart';
-import 'package:auth_ui/theme/custom_color.dart';
 import 'package:flutter/material.dart';
 
 import 'widget/forgot_password_info_text.dart';
@@ -31,7 +30,6 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: CustomColor.primaryColor,
       appBar: AppBar(
         title: const ForgotPasswordText(),
         centerTitle: true,

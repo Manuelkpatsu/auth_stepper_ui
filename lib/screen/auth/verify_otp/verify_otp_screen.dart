@@ -1,6 +1,8 @@
 import 'dart:async';
 
+import 'package:auth_ui/screen/auth/reset_password/reset_password_screen.dart';
 import 'package:auth_ui/theme/custom_color.dart';
+import 'package:auth_ui/utils/helper.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
@@ -24,7 +26,7 @@ class VerifyOTPScreen extends StatefulWidget {
 
 class _VerifyOTPScreenState extends State<VerifyOTPScreen> {
   final TextEditingController _otpController = TextEditingController();
-  final _formKey = GlobalKey<FormState>();
+  final _verifyOTPFormKey = GlobalKey<FormState>();
   int _code = 0;
   late Timer _timer;
   int _start = 15;
@@ -54,25 +56,27 @@ class _VerifyOTPScreenState extends State<VerifyOTPScreen> {
     );
   }
 
-  void _verifyOTP(String inputCode, int sentCode) async {
-    // final result = await context.read<AuthVM>().verifyOTP(
-    //   inputCode: int.parse(inputCode.trim()),
-    //   sentCode: sentCode,
-    // );
-    // if (result) {
-    //   Navigator.of(context).pushNamed(
-    //     ResetPasswordScreen.routeName,
-    //     args: widget.argument.email,
-    //   );
-    //   _formKey.currentState!.reset();
-    // } else {
-    //   router.Router.scaffoldMessengerKey.currentState!.showSnackBar(
-    //     AppSnackBar(
-    //       'Sorry, the code is incorrect. Kindly check the code.',
-    //       type: SnackType.error,
-    //     ),
-    //   );
-    // }
+  void _verifyOTP(String inputCode, int sentCode) {
+    final result = Helper.verifyOTP(
+      inputCode: int.parse(inputCode.trim()),
+      sentCode: sentCode,
+    );
+
+    if (result) {
+      Navigator.of(context).pushNamed(
+        ResetPasswordScreen.routeName,
+        arguments: widget.argument.email,
+      );
+      _verifyOTPFormKey.currentState!.reset();
+    } else {
+      // router.Router.scaffoldMessengerKey.currentState!.showSnackBar(
+      //   AppSnackBar(
+      //     'Sorry, the code is incorrect. Kindly check the code.',
+      //     type: SnackType.error,
+      //   ),
+      // );
+      debugPrint('Sorry, the code is incorrect. Kindly check the code.');
+    }
   }
 
   @override
@@ -84,7 +88,6 @@ class _VerifyOTPScreenState extends State<VerifyOTPScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: CustomColor.primaryColor,
       appBar: AppBar(
         title: const VerifyOTPText(),
         centerTitle: true,
@@ -92,7 +95,7 @@ class _VerifyOTPScreenState extends State<VerifyOTPScreen> {
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Form(
-          key: _formKey,
+          key: _verifyOTPFormKey,
           autovalidateMode: AutovalidateMode.onUserInteraction,
           child: Column(
             children: [
@@ -133,7 +136,7 @@ class _VerifyOTPScreenState extends State<VerifyOTPScreen> {
               VerifyOTPButton(
                 isLoading: false,
                 onPressed: () {
-                  if (_formKey.currentState!.validate()) {
+                  if (_verifyOTPFormKey.currentState!.validate()) {
                     _verifyOTP(_otpController.text, _code);
                   }
                 },
