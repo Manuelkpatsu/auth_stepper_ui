@@ -1,6 +1,7 @@
 import 'package:auth_ui/screen/auth/login/login_screen.dart';
 import 'package:auth_ui/screen/widget/label_text.dart';
 import 'package:auth_ui/screen/widget/password_input_field.dart';
+import 'package:auth_ui/utils/validator.dart';
 import 'package:flutter/material.dart';
 
 import 'widget/reset_password_button.dart';
@@ -58,6 +59,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                 controller: _passwordController,
                 inputAction: TextInputAction.next,
                 obscureText: _obscurePasswordText,
+                validator: Validator.password,
                 hintText: 'Your Text',
                 toggle: () =>
                     setState(() => _obscurePasswordText = !_obscurePasswordText),

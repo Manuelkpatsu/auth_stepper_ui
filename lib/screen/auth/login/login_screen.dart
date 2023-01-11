@@ -3,7 +3,7 @@ import 'package:auth_ui/screen/auth/register/register_screen.dart';
 import 'package:auth_ui/screen/widget/label_text.dart';
 import 'package:auth_ui/screen/widget/password_input_field.dart';
 import 'package:auth_ui/screen/widget/text_input_field.dart';
-import 'package:auth_ui/theme/custom_color.dart';
+import 'package:auth_ui/utils/validator.dart';
 import 'package:flutter/material.dart';
 
 import 'widget/create_new_account.dart';
@@ -55,6 +55,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SizedBox(height: 6),
                 TextInputField(
                   controller: _emailController,
+                  validator: Validator.email,
                   hintText: 'Enter Your Email Address',
                   inputAction: TextInputAction.next,
                   inputType: TextInputType.emailAddress,
@@ -68,6 +69,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 PasswordInputField(
                   controller: _passwordController,
                   inputAction: TextInputAction.done,
+                  validator: Validator.password,
                   obscureText: _obscurePasswordText,
                   hintText: 'Enter Your Password',
                   toggle: () =>

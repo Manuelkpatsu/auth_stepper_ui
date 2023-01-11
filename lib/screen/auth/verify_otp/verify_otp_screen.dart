@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:auth_ui/screen/auth/reset_password/reset_password_screen.dart';
 import 'package:auth_ui/theme/custom_color.dart';
 import 'package:auth_ui/utils/helper.dart';
+import 'package:auth_ui/utils/validator.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
@@ -109,6 +110,7 @@ class _VerifyOTPScreenState extends State<VerifyOTPScreen> {
                   keyboardType: TextInputType.number,
                   textInputAction: TextInputAction.done,
                   appContext: context,
+                  validator: Validator.code,
                   length: 4,
                   cursorColor: Colors.white,
                   textStyle: const TextStyle(

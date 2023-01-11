@@ -2,6 +2,7 @@ import 'package:auth_ui/screen/auth/verify_otp/verify_otp_argument.dart';
 import 'package:auth_ui/screen/auth/verify_otp/verify_otp_screen.dart';
 import 'package:auth_ui/screen/widget/label_text.dart';
 import 'package:auth_ui/screen/widget/text_input_field.dart';
+import 'package:auth_ui/utils/validator.dart';
 import 'package:flutter/material.dart';
 
 import 'widget/forgot_password_info_text.dart';
@@ -55,6 +56,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                 hintText: 'Enter Your Email Address',
                 inputAction: TextInputAction.done,
                 inputType: TextInputType.emailAddress,
+                validator: Validator.email,
               ),
               const SizedBox(height: 25),
               SendOTPButton(

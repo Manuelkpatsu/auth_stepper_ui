@@ -2,7 +2,7 @@ import 'package:auth_ui/screen/auth/login/login_screen.dart';
 import 'package:auth_ui/screen/widget/label_text.dart';
 import 'package:auth_ui/screen/widget/password_input_field.dart';
 import 'package:auth_ui/screen/widget/text_input_field.dart';
-import 'package:auth_ui/theme/custom_color.dart';
+import 'package:auth_ui/utils/validator.dart';
 import 'package:flutter/material.dart';
 
 import 'widget/already_have_account.dart';
@@ -56,6 +56,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 const SizedBox(height: 6),
                 TextInputField(
                   controller: _emailController,
+                  validator: Validator.email,
                   hintText: 'Enter Your Email Address',
                   inputAction: TextInputAction.next,
                   inputType: TextInputType.emailAddress,
@@ -70,6 +71,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   controller: _passwordController,
                   inputAction: TextInputAction.next,
                   obscureText: _obscurePasswordText,
+                  validator: Validator.password,
                   hintText: 'Enter Your Password',
                   toggle: () =>
                       setState(() => _obscurePasswordText = !_obscurePasswordText),
@@ -85,6 +87,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   inputAction: TextInputAction.done,
                   obscureText: _obscureConfirmPasswordText,
                   hintText: 'Confirm Your Password',
+                  validator: (String? value) {
+                    if (value!.isEmpty) {
+                      return 'Please confirm password';
+                    }
+
+                    if (_passwordController.text != _confirmPasswordController.text) {
+                      return "Passwords do not match";
+                    }
+
+                    return null;
+                  },
                   toggle: () => setState(
                       () => _obscureConfirmPasswordText = !_obscureConfirmPasswordText),
                 ),
