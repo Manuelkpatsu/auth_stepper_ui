@@ -1,3 +1,5 @@
+import 'package:auth_ui/screen/auth/verify_otp/verify_otp_argument.dart';
+import 'package:auth_ui/screen/auth/verify_otp/verify_otp_screen.dart';
 import 'package:auth_ui/screen/widget/label_text.dart';
 import 'package:auth_ui/screen/widget/text_input_field.dart';
 import 'package:auth_ui/theme/custom_color.dart';
@@ -59,7 +61,15 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
               const SizedBox(height: 25),
               SendOTPButton(
                 isLoading: false,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).pushNamed(
+                    VerifyOTPScreen.routeName,
+                    arguments: VerifyOTPArgument(
+                      code: 1234,
+                      email: _emailController.text.trim(),
+                    ),
+                  );
+                },
               ),
               const SizedBox(height: 10),
             ],
