@@ -1,3 +1,4 @@
+import 'package:auth_ui/screen/auth/register/profile_complete/profile_complete_screen.dart';
 import 'package:auth_ui/screen/widget/custom_button.dart';
 import 'package:auth_ui/screen/widget/custom_stepper.dart';
 import 'package:country_picker/country_picker.dart';
@@ -148,7 +149,14 @@ class _ProfileSetUpScreenState extends State<ProfileSetUpScreen> {
 
           return isLastStep
               ? CustomButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    if (_formKeys[_currentStep].currentState!.validate()) {
+                      Navigator.of(context).pushNamedAndRemoveUntil(
+                        ProfileCompleteScreen.routeName,
+                        (route) => false,
+                      );
+                    }
+                  },
                   widget: Text('Sign up'.toUpperCase()),
                   isLoading: false,
                 )

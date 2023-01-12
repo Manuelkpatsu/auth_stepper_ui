@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'screen/auth/forgot_password/forgot_password_screen.dart';
 import 'screen/auth/login/login_screen.dart';
+import 'screen/auth/register/profile_complete/profile_complete_screen.dart';
 import 'screen/auth/register/profile_set_up/profile_set_up_argument.dart';
 import 'screen/auth/register/profile_set_up/profile_set_up_screen.dart';
 import 'screen/auth/register/register_screen.dart';
@@ -28,6 +29,8 @@ class AppRouter {
       case ProfileSetUpScreen.routeName:
         ProfileSetupArgument argument = settings.arguments as ProfileSetupArgument;
         return MaterialPageRoute(builder: (_) => ProfileSetUpScreen(argument: argument));
+      case ProfileCompleteScreen.routeName:
+        return MaterialPageRoute(builder: (_) => const ProfileCompleteScreen());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(
