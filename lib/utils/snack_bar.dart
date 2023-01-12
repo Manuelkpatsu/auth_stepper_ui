@@ -6,6 +6,7 @@ class CustomSnackBar {
     required BuildContext context,
     required String text,
     Color backgroundColor = CustomColor.btnColor,
+    int duration = 4,
   }) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
@@ -18,6 +19,7 @@ class CustomSnackBar {
           ),
         ),
         backgroundColor: backgroundColor,
+        duration: Duration(seconds: duration),
       ),
     );
   }
