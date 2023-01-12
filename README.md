@@ -62,6 +62,9 @@ A [@nuel_nartey](https://twitter.com/nuel_nartey) Flutter Showcase project.
         <td>
             <img src="https://github.com/Manuelkpatsu/auth_stepper_ui/blob/main/screenshots/14.png" />
         </td>
+        <td>
+            <img src="https://github.com/Manuelkpatsu/auth_stepper_ui/blob/main/screenshots/15.png" />
+        </td>
     </tr>
 </table>
 
