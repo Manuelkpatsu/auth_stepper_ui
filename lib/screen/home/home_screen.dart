@@ -37,7 +37,7 @@ class HomeScreen extends StatelessWidget {
       ),
       body: const Center(
         child: Text(
-          'Welcome back',
+          'Welcome',
           style: TextStyle(
             fontSize: 20,
             color: CustomColor.primaryColor,
