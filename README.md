@@ -7,26 +7,26 @@ A [@nuel_nartey](https://twitter.com/nuel_nartey) Flutter Showcase project.
 
 ## Screenshots
 <table>
-  <tr>
-    <td>
-      <img src="https://github.com/Manuelkpatsu/auth_stepper_ui/blob/main/screenshots/1.png" />
-    </td>
-    <td>
-      <img src="https://github.com/Manuelkpatsu/auth_stepper_ui/blob/main/screenshots/2.png" />
-    </td>
-    <td>
-      <img src="https://github.com/Manuelkpatsu/auth_stepper_ui/blob/main/screenshots/3.png" />
-    </td>
-    <td>
-      <img src="https://github.com/Manuelkpatsu/auth_stepper_ui/blob/main/screenshots/4.png" />
-    </td>
-  </tr>
-</table>
-<table>
     <tr>
+        <td>
+            <img src="https://github.com/Manuelkpatsu/auth_stepper_ui/blob/main/screenshots/1.png" />
+        </td>
+        <td>
+            <img src="https://github.com/Manuelkpatsu/auth_stepper_ui/blob/main/screenshots/2.png" />
+        </td>
+        <td>
+            <img src="https://github.com/Manuelkpatsu/auth_stepper_ui/blob/main/screenshots/3.png" />
+        </td>
+        <td>
+            <img src="https://github.com/Manuelkpatsu/auth_stepper_ui/blob/main/screenshots/4.png" />
+        </td>
         <td>
             <img src="https://github.com/Manuelkpatsu/auth_stepper_ui/blob/main/screenshots/5.png" />
         </td>
+    </tr>
+</table>
+<table>
+    <tr>
         <td>
             <img src="https://github.com/Manuelkpatsu/auth_stepper_ui/blob/main/screenshots/6.png" />
         </td>
@@ -34,28 +34,24 @@ A [@nuel_nartey](https://twitter.com/nuel_nartey) Flutter Showcase project.
             <img src="https://github.com/Manuelkpatsu/auth_stepper_ui/blob/main/screenshots/7.png" />
         </td>
         <td>
-          <img src="https://github.com/Manuelkpatsu/auth_stepper_ui/blob/main/screenshots/8.png" />
+            <img src="https://github.com/Manuelkpatsu/auth_stepper_ui/blob/main/screenshots/8.png" />
         </td>
-    </tr>
-</table>
-<table>
-    <tr>
         <td>
             <img src="https://github.com/Manuelkpatsu/auth_stepper_ui/blob/main/screenshots/9.png" />
         </td>
         <td>
             <img src="https://github.com/Manuelkpatsu/auth_stepper_ui/blob/main/screenshots/10.png" />
         </td>
-        <td>
-            <img src="https://github.com/Manuelkpatsu/auth_stepper_ui/blob/main/screenshots/11.png" />
-        </td>
-        <td>
-          <img src="https://github.com/Manuelkpatsu/auth_stepper_ui/blob/main/screenshots/12.png" />
-        </td>
     </tr>
 </table>
 <table>
     <tr>
+        <td>
+            <img src="https://github.com/Manuelkpatsu/auth_stepper_ui/blob/main/screenshots/11.png" />
+        </td>
+        <td>
+            <img src="https://github.com/Manuelkpatsu/auth_stepper_ui/blob/main/screenshots/12.png" />
+        </td>
         <td>
             <img src="https://github.com/Manuelkpatsu/auth_stepper_ui/blob/main/screenshots/13.png" />
         </td>
