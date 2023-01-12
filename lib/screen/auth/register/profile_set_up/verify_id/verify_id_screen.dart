@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:auth_ui/screen/widget/image_picker_modal.dart';
 import 'package:auth_ui/theme/custom_color.dart';
 import 'package:auth_ui/utils/modal_bottom_sheet.dart';
+import 'package:auth_ui/utils/snack_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -111,10 +112,11 @@ class _VerifyIDScreenState extends State<VerifyIDScreen> {
       int sizeInBytes = file.lengthSync();
       double sizeInMb = sizeInBytes / (1024 * 1024);
       if (sizeInMb > 10) {
-        // router.Router.scaffoldMessengerKey.currentState!.showSnackBar(
-        //   AppSnackBar("Image size shouldn't exceed 10MB.", type: SnackType.error),
-        // );
-        debugPrint('Image size shouldn\'t exceed 10MB.');
+        CustomSnackBar.openSnackBar(
+          context: context,
+          text: 'File size shouldn\'t exceed 10MB.',
+          backgroundColor: CustomColor.removeColor,
+        );
       } else {
         setState(() {
           _profilePhoto = file;

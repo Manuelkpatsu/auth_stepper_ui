@@ -6,6 +6,7 @@ import 'package:auth_ui/screen/widget/label_text.dart';
 import 'package:auth_ui/screen/widget/text_input_field.dart';
 import 'package:auth_ui/theme/custom_color.dart';
 import 'package:auth_ui/utils/modal_bottom_sheet.dart';
+import 'package:auth_ui/utils/snack_bar.dart';
 import 'package:country_picker/country_picker.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
@@ -339,7 +340,11 @@ class _VerifyDocumentScreenState extends State<VerifyDocumentScreen> {
       int sizeInBytes = file.lengthSync();
       double sizeInMb = sizeInBytes / (1024 * 1024);
       if (sizeInMb > 10) {
-        debugPrint("Image size shouldn't exceed 10MB.");
+        CustomSnackBar.openSnackBar(
+          context: context,
+          text: 'File size shouldn\'t exceed 10MB.',
+          backgroundColor: CustomColor.removeColor,
+        );
       } else {
         setFile(file);
       }
@@ -369,7 +374,11 @@ class _VerifyDocumentScreenState extends State<VerifyDocumentScreen> {
       int sizeInBytes = file.lengthSync();
       double sizeInMb = sizeInBytes / (1024 * 1024);
       if (sizeInMb > 10) {
-        debugPrint("Image size shouldn't exceed 10MB.");
+        CustomSnackBar.openSnackBar(
+          context: context,
+          text: 'File size shouldn\'t exceed 10MB.',
+          backgroundColor: CustomColor.removeColor,
+        );
       } else {
         setFile(file);
       }

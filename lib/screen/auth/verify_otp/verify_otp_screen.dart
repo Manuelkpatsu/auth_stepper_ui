@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:auth_ui/screen/auth/reset_password/reset_password_screen.dart';
 import 'package:auth_ui/theme/custom_color.dart';
 import 'package:auth_ui/utils/helper.dart';
+import 'package:auth_ui/utils/snack_bar.dart';
 import 'package:auth_ui/utils/validator.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -45,8 +46,8 @@ class _VerifyOTPScreenState extends State<VerifyOTPScreen> {
     const oneSec = Duration(seconds: 1);
     _timer = Timer.periodic(
       oneSec,
-          (Timer timer) => setState(
-            () {
+      (Timer timer) => setState(
+        () {
           if (_start < 1) {
             timer.cancel();
           } else {
@@ -70,13 +71,11 @@ class _VerifyOTPScreenState extends State<VerifyOTPScreen> {
       );
       _verifyOTPFormKey.currentState!.reset();
     } else {
-      // router.Router.scaffoldMessengerKey.currentState!.showSnackBar(
-      //   AppSnackBar(
-      //     'Sorry, the code is incorrect. Kindly check the code.',
-      //     type: SnackType.error,
-      //   ),
-      // );
-      debugPrint('Sorry, the code is incorrect. Kindly check the code.');
+      CustomSnackBar.openSnackBar(
+        context: context,
+        text: 'Sorry, the code is incorrect. Kindly check the code.',
+        backgroundColor: CustomColor.removeColor,
+      );
     }
   }
 
@@ -152,8 +151,8 @@ class _VerifyOTPScreenState extends State<VerifyOTPScreen> {
                       ? 'Resend code'
                       : 'Resend code in 0:${_start.toString().padLeft(2, '0')}',
                   style: TextStyle(
-                      color:
-                      _start < 1 ? CustomColor.btnColor : CustomColor.redColor),
+                    color: _start < 1 ? CustomColor.btnColor : CustomColor.redColor,
+                  ),
                   recognizer: TapGestureRecognizer()
                     ..onTap = () {
                       if (_start > 0) {
