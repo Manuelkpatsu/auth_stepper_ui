@@ -1,10 +1,69 @@
-# auth_ui
+# A Flutter Authentication UI App
 
-A new Flutter project.
+An authentication UI app built with flutter which has the stepper widget also implemented.
 
-## Getting Started
+A [@nuel_nartey](https://twitter.com/nuel_nartey) Flutter Showcase project.
 
-This project is a starting point for a Flutter application.
+
+## Screenshots
+<table>
+  <tr>
+    <td>
+      <img src="https://github.com/Manuelkpatsu/auth_stepper_ui/blob/main/screenshots/1.png" />
+    </td>
+    <td>
+      <img src="https://github.com/Manuelkpatsu/auth_stepper_ui/blob/main/screenshots/2.png" />
+    </td>
+    <td>
+      <img src="https://github.com/Manuelkpatsu/auth_stepper_ui/blob/main/screenshots/3.png" />
+    </td>
+    <td>
+      <img src="https://github.com/Manuelkpatsu/auth_stepper_ui/blob/main/screenshots/4.png" />
+    </td>
+  </tr>
+</table>
+<table>
+    <tr>
+        <td>
+            <img src="https://github.com/Manuelkpatsu/auth_stepper_ui/blob/main/screenshots/5.png" />
+        </td>
+        <td>
+            <img src="https://github.com/Manuelkpatsu/auth_stepper_ui/blob/main/screenshots/6.png" />
+        </td>
+        <td>
+            <img src="https://github.com/Manuelkpatsu/auth_stepper_ui/blob/main/screenshots/7.png" />
+        </td>
+        <td>
+          <img src="https://github.com/Manuelkpatsu/auth_stepper_ui/blob/main/screenshots/8.png" />
+        </td>
+    </tr>
+</table>
+<table>
+    <tr>
+        <td>
+            <img src="https://github.com/Manuelkpatsu/auth_stepper_ui/blob/main/screenshots/9.png" />
+        </td>
+        <td>
+            <img src="https://github.com/Manuelkpatsu/auth_stepper_ui/blob/main/screenshots/10.png" />
+        </td>
+        <td>
+            <img src="https://github.com/Manuelkpatsu/auth_stepper_ui/blob/main/screenshots/11.png" />
+        </td>
+        <td>
+          <img src="https://github.com/Manuelkpatsu/auth_stepper_ui/blob/main/screenshots/12.png" />
+        </td>
+    </tr>
+</table>
+<table>
+    <tr>
+        <td>
+            <img src="https://github.com/Manuelkpatsu/auth_stepper_ui/blob/main/screenshots/13.png" />
+        </td>
+        <td>
+            <img src="https://github.com/Manuelkpatsu/auth_stepper_ui/blob/main/screenshots/14.png" />
+        </td>
+    </tr>
+</table>
 
 A few resources to get you started if this is your first Flutter project:
 
