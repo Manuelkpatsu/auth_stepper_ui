@@ -1,4 +1,5 @@
 import 'package:auth_ui/screen/auth/register/profile_set_up/widget/profile_set_up_text.dart';
+import 'package:auth_ui/screen/home/home_screen.dart';
 import 'package:auth_ui/screen/widget/custom_button.dart';
 import 'package:flutter/material.dart';
 
@@ -37,7 +38,12 @@ class _ProfileCompleteScreenState extends State<ProfileCompleteScreen> {
             const DoneThumbnail(),
             const SizedBox(height: 20),
             CustomButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamedAndRemoveUntil(
+                  HomeScreen.routeName,
+                  (route) => false,
+                );
+              },
               widget: Text('Done'.toUpperCase()),
             ),
             const SizedBox(height: 20),

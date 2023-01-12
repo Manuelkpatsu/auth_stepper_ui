@@ -10,6 +10,7 @@ import 'screen/auth/register/register_screen.dart';
 import 'screen/auth/reset_password/reset_password_screen.dart';
 import 'screen/auth/verify_otp/verify_otp_argument.dart';
 import 'screen/auth/verify_otp/verify_otp_screen.dart';
+import 'screen/home/home_screen.dart';
 
 class AppRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -31,6 +32,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => ProfileSetUpScreen(argument: argument));
       case ProfileCompleteScreen.routeName:
         return MaterialPageRoute(builder: (_) => const ProfileCompleteScreen());
+      case HomeScreen.routeName:
+        return MaterialPageRoute(builder: (_) => const HomeScreen());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(
