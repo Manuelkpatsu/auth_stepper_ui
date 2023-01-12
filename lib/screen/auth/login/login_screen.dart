@@ -1,5 +1,6 @@
 import 'package:auth_ui/screen/auth/forgot_password/forgot_password_screen.dart';
 import 'package:auth_ui/screen/auth/register/register_screen.dart';
+import 'package:auth_ui/screen/home/home_screen.dart';
 import 'package:auth_ui/screen/widget/label_text.dart';
 import 'package:auth_ui/screen/widget/password_input_field.dart';
 import 'package:auth_ui/screen/widget/text_input_field.dart';
@@ -84,7 +85,14 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SizedBox(height: 50),
                 LoginButton(
                   isLoading: false,
-                  onPressed: () {},
+                  onPressed: () {
+                    if (_loginFormKey.currentState!.validate()) {
+                      Navigator.of(context).pushNamedAndRemoveUntil(
+                        HomeScreen.routeName,
+                        (route) => false,
+                      );
+                    }
+                  },
                 ),
                 const SizedBox(height: 25),
                 CreateNewAccount(

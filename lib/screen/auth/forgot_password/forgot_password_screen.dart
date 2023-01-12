@@ -62,13 +62,15 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
               SendOTPButton(
                 isLoading: false,
                 onPressed: () {
-                  Navigator.of(context).pushNamed(
-                    VerifyOTPScreen.routeName,
-                    arguments: VerifyOTPArgument(
-                      code: 1234,
-                      email: _emailController.text.trim(),
-                    ),
-                  );
+                  if (_forgotPasswordFormKey.currentState!.validate()) {
+                    Navigator.of(context).pushNamed(
+                      VerifyOTPScreen.routeName,
+                      arguments: VerifyOTPArgument(
+                        code: 1234,
+                        email: _emailController.text.trim(),
+                      ),
+                    );
+                  }
                 },
               ),
               const SizedBox(height: 10),
