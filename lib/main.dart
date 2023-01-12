@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Auth UI Example',
       theme: CustomTheme.theme,
       home: AnimatedSplashScreen(
         duration: 3000,
