@@ -4,7 +4,6 @@ import 'package:auth_ui/theme/custom_color.dart';
 import 'package:auth_ui/utils/validator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 
 import 'widget/basic_details_info_text.dart';
